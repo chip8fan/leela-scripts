@@ -1,6 +1,5 @@
 import os
 import sys
-import shutil
 file = open("match.txt", "w")
 file.write('WhiteTitle <> "BOT"\n')
 file.write('BlackTitle <> "BOT"\n')
@@ -21,11 +20,7 @@ if sys.argv[1].endswith(".pgn") and os.path.isfile(book_name):
     os.remove(book_name)
 if os.path.isfile(book_name) == False and sys.argv[1].endswith(".pgn.zst"):
     os.system(f"jja make --min-games 10 --output {book_name} {file_name}")
-if sys.argv[1].endswith(".pgn.zst"):
-    #if os.path.isdir("supervised-0") == False:
-    #    os.system(f"trainingdata-tool {file_name}")
-    pass
-elif sys.argv[1].endswith(".pgn"):
+if sys.argv[1].endswith(".pgn"):
     root_directory = os.getcwd()
     training_directory = file_name.replace(".pgn", "")
     if os.path.isdir(training_directory) == False:
