@@ -1,3 +1,5 @@
 import sys
 import webbrowser
-webbrowser.open(f"https://lichess.org/api/games/user/{sys.argv[1]}?rated=true&tags=true&clocks=false&evals=false&opening=false&literate=false&perfType=ultraBullet%2Cbullet%2Cblitz%2Crapid%2Cclassical%2Ccorrespondence%2Cstandard")
+sys.argv.pop(0)
+for user in sys.argv:
+    webbrowser.open(f"https://lichess.org/api/games/user/{user}?tags=true&clocks=false&evals=false&opening=false&literate=false&perfType=blitz%2Crapid%2Cclassical%2Ccorrespondence%2Cstandard")
