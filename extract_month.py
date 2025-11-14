@@ -18,8 +18,8 @@ else:
 book_name = file_name.replace(".pgn", ".bin")
 if sys.argv[1].endswith(".pgn") and os.path.isfile(book_name):
     os.remove(book_name)
-if os.path.isfile(book_name) == False and sys.argv[1].endswith(".pgn.zst"):
-    os.system(f"jja make --min-games 10 --output {book_name} {file_name}")
+#if os.path.isfile(book_name) == False and sys.argv[1].endswith(".pgn.zst"):
+    #os.system(f"jja make --min-games 10 --output {book_name} {file_name}")
 if sys.argv[1].endswith(".pgn"):
     root_directory = os.getcwd()
     training_directory = file_name.replace(".pgn", "")
